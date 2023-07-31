@@ -1,0 +1,48 @@
+/*     CardCharacter/Planet/Vehicle    */
+
+
+.card-custom {
+    background-color: rgb(54, 54, 54);
+}
+
+/*     InfoCharacters/Planets/Vehicles     */
+
+.general__card {
+    background: rgba(0, 0, 0, 0.685);
+    color:antiquewhite;
+}
+
+.info__descriptions {
+    background-color: rgb(55, 24, 97);
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-width: 3px;
+    border-radius: 8px;
+    border-color: rgb(5,9,47);
+    border-style: solid;
+    cursor: pointer;
+    align-self: center;
+}
+
+.info__descriptions:hover {
+    background-color: rgb(49,26,80);
+    text-decoration: underline;
+    border-color: rgb(5,9,47);
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.link {
+    text-decoration: none;
+    color: #6C757D;
+}
+
+.link:hover {
+    color: antiquewhite;
+}
+
+
+
+
+
+

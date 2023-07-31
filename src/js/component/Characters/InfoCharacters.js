@@ -2,23 +2,54 @@ import React from 'react'
 import { useContext } from "react";
 import { Context } from "../../store/appContext"
 import { Link, useParams } from 'react-router-dom';
+import "/workspaces/diana-startwars-blog/src/js/component/Cards.css"
 
 const InfoCharacters = () => {
     const params = useParams();
-    const characterIndex = params.idCard;
-    const {store, actions} = useContext(Context)
+    const characterIndex = params.idPersonajes;
+    const { store, actions } = useContext(Context);
+    const characterProperties = store.characters[characterIndex - 1];
+
     return (
-        <div>
-            <p className='text-white'>
-                Hola, mi id es: {store.characters.length == 0 ? "Cargando..." : store.characters[characterIndex-1].id} y mi nombre es {store.characters[characterIndex-1].name}
-            </p>
-           <img src={`https://starwars-visualguide.com/assets/img/characters/${characterIndex}.jpg`} />
-            <Link to="/">
-                <span className="btn btn-primary btn-lg" role="button">
-                    TEMPORAL LINK TO HOME
-                </span>
-            </Link>
-        </div>
+        <>
+            <div className="container card general__card" style={{ width: "max-width: 500px" }}>
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <img src={`https://starwars-visualguide.com/assets/img/characters/${characterIndex}.jpg`} className="img-fluid rounded-start" alt="..." />
+                    </div>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h3 className="card-title text-center pt-5">{characterProperties.name}</h3>
+                            <p className="card-text text-center mt-3">The Star Wars franchise depicts the adventures of characters "A long time ago in a galaxy far, far away", in which humans and many species of aliens (often humanoid) co-exist with robots (typically referred to in the films as 'droids'), who may assist them in their daily routines; space travel between planets is common due to lightspeed hyperspace technology.</p>
+                            <p className="card-text text-center px-4">The planets range from wealthy, planet-wide cities to deserts scarcely populated by primitive tribes. Virtually any Earth biome, along with many fictional ones, has its counterpart as a Star Wars planet which, in most cases, teem with sentient and non-sentient alien life.</p>
+
+                            <div className='text-center mt-5'>
+                                <h4>{characterProperties.name} characteristics</h4>
+                                <ul className='d-flex'>
+                                    <li className='info__descriptions'>{characterProperties.description1}</li>
+                                    <li className='info__descriptions'>{characterProperties.description2}</li>
+                                    <li className='info__descriptions'>{characterProperties.description3}</li>
+                                    <li className='info__descriptions'>{characterProperties.description4}</li>
+                                    <li className='info__descriptions'>{characterProperties.description5}</li>
+                                    <li className='info__descriptions'>{characterProperties.description6}</li>
+
+                                </ul>
+                            </div>
+                            <div className='d-flex justify-content-around'>
+                                <span type="button" className="btn btn-outline-secondary"><a className="link"
+                                    href="https://starwars-visualguide.com/#/characters?page=1" >See more</a></span>
+                                <Link to="/">
+                                    <span type="button" className="btn btn-outline-secondary" role="button">
+                                        Go back
+                                    </span>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </>
     )
 }
 

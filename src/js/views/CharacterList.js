@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import "../styles/home.css";
 import { Context } from "../store/appContext";
 import CardCharacters from "../component/Characters/CardCharacter";
 
