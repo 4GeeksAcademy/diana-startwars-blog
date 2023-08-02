@@ -1,3 +1,31 @@
 body {
+    font-family: 'Chakra Petch', sans-serif;
     background-image: url("https://img.freepik.com/fotos-premium/grupo-estrellas-brillantes-cielo-nocturno-espacio-profundo-universo_213524-724.jpg?w=1380");
 }
+
+/* CARDLIST */
+.custom-scrollbar {
+    scrollbar-color: rgb(1, 8, 110) rgba(212, 212, 14, 0.5); /* Cambia los colores a los que desees */
+  }
+/* NAVBAR */
+.logo {
+    margin-left: 7rem;
+}
+
+.fav__button {
+    margin-right: 7rem;
+    font-size: 3rem
+}
+
+.borrar {
+    text-decoration: none;
+    justify-items: end;
+    margin-left: 3rem;
+    font-size: 2rem;
+}
+
+.borrar:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
